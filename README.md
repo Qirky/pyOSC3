@@ -1,0 +1,1 @@
+Updated version of pyOSC (Artem Baguinski) based on SimpleOSC (Daniel Holth & Clinton McChesney) to use with Python 3
