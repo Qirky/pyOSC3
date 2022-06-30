@@ -2734,7 +2734,7 @@ class OSCStreamingClient(OSCAddressSpace):
         self._running = False
         
     def _receiveWithTimeout(self, count):
-        chunk = str()
+        chunk = bytes()
         while len(chunk) < count:
             try:
                 tmp = self.socket.recv(count - len(chunk))
