@@ -2854,7 +2854,7 @@ class OSCStreamingClient(OSCAddressSpace):
         binary = msg.getBinary()
         length = len(binary)
         # prepend length of packet before the actual message (big endian)
-        len_big_endian = array.array('c', '\0' * 4)
+        len_big_endian = struct.pack('>L', length)
         struct.pack_into(">L", len_big_endian, 0, length)
         len_big_endian = len_big_endian.tostring()
         if self._transmitWithTimeout(len_big_endian) and self._transmitWithTimeout(binary):
